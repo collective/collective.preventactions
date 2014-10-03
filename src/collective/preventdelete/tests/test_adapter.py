@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 import unittest2 as unittest
-from collective.prenventdelete.testing import COLLECTIVE_PRENVENTDELETE_INTEGRATION
+from collective.preventdelete.testing import COLLECTIVE_PREVENTDELETE_INTEGRATION
 
 
-class TestAdapter(unittest.TestAdapter):
-    layer = COLLECTIVE_PRENVENTDELETE_INTEGRATION
+class TestAdapter(unittest.TestCase):
+    layer = COLLECTIVE_PREVENTDELETE_INTEGRATION
 
     def setUp(self):
         self.app = self.layer['app']
@@ -12,4 +12,4 @@ class TestAdapter(unittest.TestAdapter):
         self.request = self.layer['request']
 
     def test_document_delete(self):
-        pass
+        self.assertTrue(True)

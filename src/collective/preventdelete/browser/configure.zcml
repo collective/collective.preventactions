@@ -15,7 +15,7 @@
         for="*"
         name="preventdelete_activation"
         class=".preventdelete.PreventDeleteActivationView"
-        permission="zope.Public"
+        permission="zope2.View"
         allowed_interface=".interfaces.IPreventDeleteActivationView"
         layer="..interfaces.ICollectivePreventdeleteLayer"
         />
