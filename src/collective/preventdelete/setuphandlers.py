@@ -16,12 +16,11 @@ def uninstallPreventDelete(context):
 
 
 def unregisterProvidesInterfaces(portal):
-    from collective.preventdelete.interfaces import IPreventDeleteActivate
-    interfaces = IPreventDeleteActivate
-    for interface in interfaces:
-        catalog = getToolByName(portal, 'portal_catalog')
-        brains = catalog({"object_provides": interface.__identifier__})
-        for brain in brains:
-            obj = brain.getObject()
-            noLongerProvides(obj, interface)
-            obj.reindexObject()
+    from collective.preventdelete.interfaces import IPreventDeleteActivated
+    interface = IPreventDeleteActivated
+    catalog = getToolByName(portal, 'portal_catalog')
+    brains = catalog({"object_provides": interface.__identifier__})
+    for brain in brains:
+        obj = brain.getObject()
+        noLongerProvides(obj, interface)
+        obj.reindexObject()
