@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<import-steps>
+  <import-step id="collective.preventactions.uninstall"
+               handler="collective.preventactions.setuphandlers.uninstallPreventActions"
+               title="collective.preventactions: uninstall import step">
+  </import-step>
+</import-steps>

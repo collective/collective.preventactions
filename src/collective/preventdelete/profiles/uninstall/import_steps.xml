@@ -1,7 +1,0 @@
-<?xml version="1.0"?>
-<import-steps>
-  <import-step id="collective.preventdelete.uninstall"
-               handler="collective.preventdelete.setuphandlers.uninstallPreventDelete"
-               title="collective.preventdelete: uninstall import step">
-  </import-step>
-</import-steps>

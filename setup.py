@@ -13,7 +13,7 @@ long_description = \
     read('CHANGES.rst')
 
 setup(
-    name='collective.preventdelete',
+    name='collective.preventactions',
     version='0.1',
     description="This package allows administrateur to marker object which can't be deleted",
     long_description=long_description,
@@ -25,7 +25,7 @@ setup(
     keywords='Plone Python Zope',
     author='Benoît Suttor',
     author_email='benoit.suttor@imio.be',
-    url='http://pypi.python.org/pypi/collective.preventdelete',
+    url='http://pypi.python.org/pypi/collective.preventactions',
     license='BSD',
     packages=find_packages('src', exclude=['ez_setup']),
     namespace_packages=['collective'],
@@ -43,7 +43,5 @@ setup(
         ],
     },
     entry_points="""
-    [z3c.autoinclude.plugin]
-    target = plone
     """,
 )

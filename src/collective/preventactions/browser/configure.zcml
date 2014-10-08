@@ -1,0 +1,33 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="collective.preventactions">
+
+    <!-- Publish static files -->
+    <browser:resourceDirectory
+        name="collective.preventactions"
+        directory="static"
+        />
+
+    <include package="Products.CMFCore" file="permissions.zcml" />
+
+    <browser:page
+        name="prevent-actions"
+        for="OFS.interfaces.IItem"
+        class=".preventactions.PreventActionsForm"
+        layer="..interfaces.ICollectivePreventActionsLayer"
+        permission="cmf.ManagePortal"
+        />
+
+    <class class="Products.Archetypes.BaseObject.BaseObject">
+        <implements interface=".preventactions.IPreventActions" />
+    </class>
+
+    <class class="plone.dexterity.content.DexterityContent">
+        <implements interface=".preventactions.IPreventActions" />
+    </class>
+
+
+
+</configure>

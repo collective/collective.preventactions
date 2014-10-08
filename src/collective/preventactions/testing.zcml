@@ -3,21 +3,21 @@
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:i18n="http://namespaces.zope.org/i18n"
-    i18n_domain="collective.preventdelete">
+    i18n_domain="collective.preventactions">
 
 
   <include file="configure.zcml" />
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="testing"
-      title="collective.preventdelete test"
+      title="collective.preventactions test"
       directory="profiles/testing"
-      description="collective.preventdelete desc"
+      description="collective.preventactions desc"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   <genericsetup:importStep
-      name="collective.preventdelete.tests_content"
-      title="collective.preventdelete test"
+      name="collective.preventactions.tests_content"
+      title="collective.preventactions test"
       description="Various import steps that are not handled by GS import/export handlers."
       handler=".setuphandlers.testSetup">
   </genericsetup:importStep>

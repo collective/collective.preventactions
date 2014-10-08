@@ -2,6 +2,6 @@
 <metadata>
   <version>1</version>
   <dependencies>
-      <dependency>profile-collective.preventdelete:default</dependency>
+      <dependency>profile-collective.preventactions:default</dependency>
   </dependencies>
 </metadata>

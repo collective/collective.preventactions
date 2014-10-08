@@ -7,4 +7,4 @@ class HiddenProfiles(object):
     implements(INonInstallable)
 
     def getNonInstallableProfiles(self):
-        return ['collective.preventdelete:uninstall']
+        return ['collective.preventactions:uninstall']
