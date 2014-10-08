@@ -42,7 +42,7 @@
 
     <subscriber
             for="OFS.interfaces.IItem
-                 zope.container.interfaces.IObjectRemovedEvent"
+                 OFS.interfaces.IObjectWillBeRemovedEvent"
             handler=".prevent.deleteObject"
             />
 
