@@ -10,7 +10,7 @@
             <property name="description" i18n:translate=""></property>
             <property name="url_expr">string:${object_url}/@@prevent-actions</property>
             <property name="icon_expr"></property>
-            <property name="available_expr"></property>
+            <property name="available_expr">python:not context.restrictedTraverse('@@plone_interface_info').provides('Products.CMFPlone.interfaces.siteroot.IPloneSiteRoot')</property>
             <property name="permissions">
                 <element value="Modify portal content"/>
             </property>
