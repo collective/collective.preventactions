@@ -9,3 +9,5 @@ parts
 var
 *.pyc
 *.egg-info
+.tags
+share/

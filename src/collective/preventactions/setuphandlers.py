@@ -2,13 +2,33 @@
 from zope.interface import noLongerProvides
 from Products.CMFCore.utils import getToolByName
 
+from collective.preventactions.interfaces import IPreventDelete
+from collective.preventactions.interfaces import IPreventMoveOrRename
+from plone import api
 
-def testSetup(context):
-    if context.readDataFile('collective.preventactions.txt') is None:
-        return
+from Products.CMFPlone.interfaces import INonInstallable
+from zope.interface import implementer
 
 
-def uninstallPreventAction(context):
-    if context.readDataFile('collective.preventactions-uninstall.txt') is None:
-        return
-    portal = context.getSite()
+@implementer(INonInstallable)
+class HiddenProfiles(object):
+
+    def getNonInstallableProfiles(self):
+        """Hide uninstall profile from site-creation and quickinstaller"""
+        return [
+            'collective.preventactions:uninstall',
+        ]
+
+
+def uninstall(context):
+    # get all objects provided by IPreventDelete or IPreventMoveOrRename
+    # for unprovided interfaces
+    catalog = api.portal.get_tool('portal_catalog')
+    query = {}
+    for iface in [IPreventDelete, IPreventMoveOrRename]:
+        query['object_provides'] = iface.__identifier__
+        brains = catalog(query)
+        for brain in brains:
+            obj = brain.getObject()
+            noLongerProvides(obj, iface)
+            obj.reindexObject()

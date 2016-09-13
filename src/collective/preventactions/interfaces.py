@@ -10,5 +10,5 @@ class IPreventDelete(Interface):
     """Marker interface for prevent delete object"""
 
 
-class IPreventRename(Interface):
-    """Marker interface for prevent rename id object"""
+class IPreventMoveOrRename(Interface):
+    """Marker interface for prevent move / rename object"""

@@ -34,6 +34,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'Plone',
+        'Products.GenericSetup>=1.8.2',
         'setuptools',
         'plone.api',
     ],
