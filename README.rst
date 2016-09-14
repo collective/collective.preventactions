@@ -1,12 +1,16 @@
-=========================
-collective.preventactions
-=========================
-
+.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
+   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
+   This text does not appear on pypi or github. It is a comment.
+   
 .. image:: https://travis-ci.org/imio/collective.preventactions.svg?branch=master
    :target: https://travis-ci.org/imio/collective.preventactions
 
 .. image:: https://coveralls.io/repos/imio/collective.preventactions/badge.svg?branch=master
    :target: https://coveralls.io/github/imio/collective.preventactions?branch=master
+
+=========================
+collective.preventactions
+=========================
 
 This package allows administrateur to marker object which can't be deleted or renamed/moved.
 
