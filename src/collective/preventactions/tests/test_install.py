@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
+from collective.preventactions.interfaces import ICollectivePreventActionsLayer
 from collective.preventactions.interfaces import IPreventDelete
 from collective.preventactions.interfaces import IPreventMoveOrRename
-from collective.preventactions.interfaces import ICollectivePreventActionsLayer
-from collective.preventactions.testing import COLLECTIVE_PREVENTACTIONS_INTEGRATION
+from collective.preventactions.testing import COLLECTIVE_PREVENTACTIONS_INTEGRATION  # noqa
 from plone import api
-from plone.browserlayer.utils import registered_layers
 from plone.app.testing import applyProfile
-from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
+from plone.app.testing import TEST_USER_ID
+from plone.browserlayer.utils import registered_layers
 from zope.event import notify
 from zope.interface import alsoProvides
 from zope.traversing.interfaces import BeforeTraverseEvent
-
 
 import unittest
 

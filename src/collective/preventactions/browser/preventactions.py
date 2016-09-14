@@ -3,7 +3,9 @@ from collective.preventactions import _
 from collective.preventactions.interfaces import IPreventDelete
 from collective.preventactions.interfaces import IPreventMoveOrRename
 from plone.z3cform.layout import wrap_form
-from z3c.form import form, button, field
+from z3c.form import button
+from z3c.form import field
+from z3c.form import form
 from z3c.form.browser.checkbox import SingleCheckBoxFieldWidget
 from zope import schema
 from zope.interface import alsoProvides
@@ -11,6 +13,8 @@ from zope.interface import Interface
 from zope.interface import noLongerProvides
 
 import logging
+
+
 logger = logging.getLogger('collective.preventeactions')
 
 

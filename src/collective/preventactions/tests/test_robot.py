@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from collective.preventactions.testing import COLLECTIVE_PREVENTACTIONS_ROBOT_TESTING
+from collective.preventactions.testing import COLLECTIVE_PREVENTACTIONS_ROBOT_TESTING  # noqa
 from plone.testing import layered
 
 import robotsuite

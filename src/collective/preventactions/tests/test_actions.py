@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 from collective.preventactions.interfaces import IPreventDelete
 from collective.preventactions.interfaces import IPreventMoveOrRename
-from collective.preventactions.testing import (
-    COLLECTIVE_PREVENTACTIONS_INTEGRATION
-)
+from collective.preventactions.testing import COLLECTIVE_PREVENTACTIONS_INTEGRATION  # noqa
 from OFS.ObjectManager import BeforeDeleteException
 from plone import api
 from plone.app.testing import login
