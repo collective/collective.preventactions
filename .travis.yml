@@ -7,7 +7,7 @@ cache:
 python:
   - 2.7
 install:
-  - python bootstrap-buildout.py -c travis.cfg
+  - python bootstrap.py -c travis.cfg
   - bin/buildout -Nc travis.cfg buildout:eggs-directory=$HOME/buildout-cache/eggs buildout:download-cache=$HOME/buildout-cache/downloads
 script:
   - bin/code-analysis
