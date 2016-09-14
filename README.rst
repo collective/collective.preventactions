@@ -4,12 +4,18 @@ collective.preventactions
 
 .. image:: https://travis-ci.org/imio/collective.preventactions.svg?branch=master
    :target: https://travis-ci.org/imio/collective.preventactions
+
 .. image:: https://coveralls.io/repos/imio/collective.preventactions/badge.svg?branch=master
- :target: https://coveralls.io/github/imio/collective.preventactions?branch=master
+   :target: https://coveralls.io/github/imio/collective.preventactions?branch=master
 
 This package allows administrateur to marker object which can't be deleted or renamed/moved.
 
-
+.. image:: https://raw.githubusercontent.com/imio/collective.preventactions/master/docs/screenshot.png
+    :alt: The map on a collection.
+    :width: 388
+    :height: 276
+    :align: center
+    
 * `Source code @ GitHub <https://github.com/imio/collective.preventactions>`_
 * `Releases @ PyPI <http://pypi.python.org/pypi/collective.preventactions>`_
 * `Continuous Integration @ Travis-CI <http://travis-ci.org/imio/collective.preventactions>`_
