@@ -22,7 +22,6 @@ This package allows administrateur to marker object which can't be deleted or re
     
 * `Source code @ GitHub <https://github.com/imio/collective.preventactions>`_
 * `Releases @ PyPI <http://pypi.python.org/pypi/collective.preventactions>`_
-* `Continuous Integration @ Travis-CI <http://travis-ci.org/imio/collective.preventactions>`_
 
 How it works
 ------------
