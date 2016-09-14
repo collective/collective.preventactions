@@ -5,6 +5,7 @@ from collective.preventactions.interfaces import IPreventMoveOrRename
 from collective.preventactions.testing import (
     COLLECTIVE_PREVENTACTIONS_INTEGRATION
 )
+from OFS.ObjectManager import BeforeDeleteException
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
 from plone.app.testing import setRoles
@@ -33,8 +34,9 @@ class TestActions(unittest.TestCase):
         login(self.portal, TEST_USER_NAME)
         alsoProvides(self.document, IPreventDelete)
         self.assertTrue('document' in self.portal.contentIds())
-        api.content.delete(self.document)
-        import ipdb; ipdb.set_trace()
+        self.assertRaises(BeforeDeleteException,
+                          api.content.delete, self.document)
+        self.assertTrue('document' in self.portal.contentIds())
 
     def test_move_document(self):
         login(self.portal, TEST_USER_NAME)
@@ -44,12 +46,12 @@ class TestActions(unittest.TestCase):
         self.assertEqual(self.document.absolute_url(),
                          'http://nohost/plone/document')
 
-        api.content.move(source=self.document, target=self.folder)
+        self.assertRaises(Exception,
+                          api.content.move, self.document, self.folder)
+        # api.content.move(source=self.document, target=self.folder)
         self.assertEqual(self.document.absolute_url(),
                          'http://nohost/plone/document')
 
-        import ipdb; ipdb.set_trace()
         noLongerProvides(self.document, IPreventMoveOrRename)
         api.content.rename(obj=self.document, new_id='old-doc')
-        self.assertEqual(self.document.id,
-                         'old-doc')
+        self.assertEqual(self.document.id, 'old-doc')
