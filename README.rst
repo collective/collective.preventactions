@@ -5,8 +5,8 @@
 .. image:: https://travis-ci.org/IMIO/collective.preventactions.svg?branch=master
    :target: https://travis-ci.org/IMIO/collective.preventactions
 
-.. image:: https://coveralls.io/repos/imio/collective.preventactions/badge.svg?branch=master
-   :target: https://coveralls.io/github/imio/collective.preventactions?branch=master
+.. image:: https://coveralls.io/repos/IMIO/collective.preventactions/badge.svg?branch=master
+   :target: https://coveralls.io/github/IMIO/collective.preventactions?branch=master
 
 =========================
 collective.preventactions
