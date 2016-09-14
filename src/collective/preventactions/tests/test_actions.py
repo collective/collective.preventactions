@@ -44,6 +44,9 @@ class TestActions(unittest.TestCase):
 
         self.assertRaises(Exception,
                           api.content.move, self.document, self.folder)
+
+        self.assertRaises(Exception,
+                          api.content.rename, self.document, 'changed-doc')
         # api.content.move(source=self.document, target=self.folder)
         self.assertEqual(self.document.absolute_url(),
                          'http://nohost/plone/document')
@@ -51,3 +54,16 @@ class TestActions(unittest.TestCase):
         noLongerProvides(self.document, IPreventMoveOrRename)
         api.content.rename(obj=self.document, new_id='old-doc')
         self.assertEqual(self.document.id, 'old-doc')
+
+        alsoProvides(self.document, IPreventMoveOrRename)
+        alsoProvides(self.document, IPreventDelete)
+        self.assertRaises(Exception,
+                          api.content.move, self.document, self.folder)
+
+        self.assertRaises(Exception,
+                          api.content.rename, self.document, 'changed-doc')
+        # api.content.move(source=self.document, target=self.folder)
+        self.assertEqual(self.document.absolute_url(),
+                         'http://nohost/plone/old-doc')
+
+        noLongerProvides(self.document, IPreventMoveOrRename)
