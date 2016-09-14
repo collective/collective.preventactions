@@ -32,16 +32,16 @@ class IPreventActions(Interface):
     """ Define form fields """
 
     delete = PreventBool(
-        title=_(u"This object can not be deleted"),
-        description=_(u"If check, this object can not be deleted."),
+        title=_(u'This object can not be deleted'),
+        description=_(u'If check, this object can not be deleted.'),
         default=False,
         iface=IPreventDelete
     )
 
     move_or_rename = PreventBool(
-        title=_(u"This object can not be moved or renamed"),
+        title=_(u'This object can not be moved or renamed'),
         description=_(
-            u"If check, this object can not be moved or renamed (id)."),
+            u'If check, this object can not be moved or renamed (id).'),
         default=False,
         iface=IPreventMoveOrRename
     )
@@ -49,8 +49,8 @@ class IPreventActions(Interface):
 
 class PreventActionsForm(form.Form):
     fields = field.Fields(IPreventActions)
-    label = _(u"Pevent actions")
-    description = _(u"What actions will you prevent ?")
+    label = _(u'Pevent actions')
+    description = _(u'What actions will you prevent ?')
     fields['delete'].widgetFactory = SingleCheckBoxFieldWidget
     fields['move_or_rename'].widgetFactory = SingleCheckBoxFieldWidget
 
@@ -79,9 +79,9 @@ class PreventActionsForm(form.Form):
                 noLongerProvides(self.context, self.fields[name].field.iface)
                 self.widgets[name].items[0]['checked'] = value
 
-        self.status = _(u"Changes saved")
+        self.status = _(u'Changes saved')
 
-    @button.buttonAndHandler(u"Cancel")
+    @button.buttonAndHandler(u'Cancel')
     def handleCancel(self, action):
         """User cancelled. Redirect back to the front page.
         """

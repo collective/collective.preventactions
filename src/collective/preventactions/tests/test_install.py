@@ -7,9 +7,7 @@ from plone import api
 from plone.browserlayer.utils import registered_layers
 from plone.app.testing import applyProfile
 from plone.app.testing import TEST_USER_ID
-# from plone.app.testing import TEST_USER_NAME
 from plone.app.testing import setRoles
-from Products.CMFCore.utils import getToolByName
 from zope.event import notify
 from zope.interface import alsoProvides
 from zope.traversing.interfaces import BeforeTraverseEvent
@@ -36,7 +34,7 @@ class TestInstall(unittest.TestCase):
         """ Validate that our products GS profile has been run and the product
             installed
         """
-        qi_tool = getToolByName(self.portal, 'portal_quickinstaller')
+        qi_tool = api.portal.get_tool('portal_quickinstaller')
         pid = 'collective.preventactions'
         installed = [p['id'] for p in qi_tool.listInstalledProducts()]
         self.assertTrue(pid in installed,

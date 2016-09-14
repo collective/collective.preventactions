@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
-from zope.interface import noLongerProvides
-from Products.CMFCore.utils import getToolByName
-
 from collective.preventactions.interfaces import IPreventDelete
 from collective.preventactions.interfaces import IPreventMoveOrRename
 from plone import api
-
 from Products.CMFPlone.interfaces import INonInstallable
 from zope.interface import implementer
+from zope.interface import noLongerProvides
 
 
 @implementer(INonInstallable)
