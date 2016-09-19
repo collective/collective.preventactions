@@ -2,11 +2,11 @@
    If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
    This text does not appear on pypi or github. It is a comment.
    
-.. image:: https://travis-ci.org/IMIO/collective.preventactions.svg?branch=master
-   :target: https://travis-ci.org/IMIO/collective.preventactions
+.. image:: https://travis-ci.org/collective/collective.preventactions.svg?branch=master
+   :target: https://travis-ci.org/collective/collective.preventactions
 
-.. image:: https://coveralls.io/repos/IMIO/collective.preventactions/badge.svg?branch=master
-   :target: https://coveralls.io/github/IMIO/collective.preventactions?branch=master
+.. image:: https://coveralls.io/repos/collective/collective.preventactions/badge.svg?branch=master
+   :target: https://coveralls.io/github/collective/collective.preventactions?branch=master
 
 =========================
 collective.preventactions
@@ -20,7 +20,7 @@ This package allows administrateur to marker object which can't be deleted or re
     :height: 276
     :align: center
     
-* `Source code @ GitHub <https://github.com/imio/collective.preventactions>`_
+* `Source code @ GitHub <https://github.com/collective/collective.preventactions>`_
 * `Releases @ PyPI <http://pypi.python.org/pypi/collective.preventactions>`_
 
 How it works
