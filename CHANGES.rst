@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2 (unreleased)
+0.2 (2018-07-09)
 ----------------
 
 - Fix check render of PreventActionForm.
