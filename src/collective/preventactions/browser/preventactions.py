@@ -64,9 +64,13 @@ class PreventActionsForm(form.Form):
 
         # Dump out all widgets - note that each <fieldset> is a subform
         # and this function only concerns the current fieldset
-        for widget_value in self.widgets.values():
-            checked = widget_value.field.iface.providedBy(self.context)
-            widget_value.items[0]['checked'] = checked
+        for widget_name in self.widgets:
+            widget = self.widgets[widget_name]
+            checked = widget.field.iface.providedBy(self.context)
+            if checked:
+                widget.value = [u'selected']
+            else:
+                widget.value = []
 
     @button.buttonAndHandler(_(u'Save'))
     def handleApply(self, action):
@@ -78,10 +82,10 @@ class PreventActionsForm(form.Form):
         for name, value in data.items():
             if value:
                 alsoProvides(self.context, self.fields[name].field.iface)
-                self.widgets[name].items[0]['checked'] = value
+                self.widgets[name].value = [u'selected']
             else:
                 noLongerProvides(self.context, self.fields[name].field.iface)
-                self.widgets[name].items[0]['checked'] = value
+                self.widgets[name].value = []
 
         self.status = _(u'Changes saved')
 
@@ -89,5 +93,6 @@ class PreventActionsForm(form.Form):
     def handleCancel(self, action):
         """User cancelled. Redirect back to the front page.
         """
+
 
 PreventActionsView = wrap_form(PreventActionsForm)

@@ -4,7 +4,8 @@ Changelog
 0.2 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Fix check render of PreventActionForm.
+  [bsuttor]
 
 
 0.1 (2016-09-20)
