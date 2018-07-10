@@ -53,7 +53,7 @@ class IPreventActions(Interface):
 
 class PreventActionsForm(form.Form):
     fields = field.Fields(IPreventActions)
-    label = _(u'Pevent actions')
+    label = _(u'Prevent actions')
     description = _(u'What actions will you prevent ?')
     fields['delete'].widgetFactory = SingleCheckBoxFieldWidget
     fields['move_or_rename'].widgetFactory = SingleCheckBoxFieldWidget
