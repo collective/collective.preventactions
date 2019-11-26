@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.2.2 (unreleased)
+0.3.0 (2019-11-26)
 ------------------
 
 - Remove Archetypes dependency.
