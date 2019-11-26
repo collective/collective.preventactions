@@ -27,8 +27,8 @@ This package allows administrateur to marker object which can't be deleted or re
 Versions
 --------
 
-- Versions > 3 are for Plone 5.2 and Python 3
-- Versions < 3 are compatible with Archetypes (branch 2.x)
+- Versions > 0.3 are for Plone 5.2 and Python 3
+- Versions < 0.3 are compatible with Archetypes (branch 0.2.x)
 
 
 How it works
