@@ -4,7 +4,8 @@ Changelog
 0.2.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove Archetypes dependency.
+  [bsuttor]
 
 
 0.2.1 (2018-07-10)
