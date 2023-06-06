@@ -1,15 +1,12 @@
 #!/usr/bin/make
 .PHONY: buildout cleanall test instance
 
-bootstrap.py:
-	wget http://downloads.buildout.org/2/bootstrap.py
-
-bin/python:
-	virtualenv-2.7 .
+bin/pip:
+	python3 -m venv .
 	touch $@
 
-bin/buildout: bootstrap.py buildout.cfg bin/python
-	./bin/python bootstrap.py
+bin/buildout: bin/pip
+	./bin/pip install -r requirements.txt
 	touch $@
 
 buildout: bin/buildout
@@ -22,4 +19,4 @@ instance: buildout
 	./bin/instance fg
 
 cleanall:
-	rm -rf bin develop-eggs downloads include lib parts .installed.cfg .mr.developer.cfg bootstrap.py
+	rm -rf bin develop-eggs downloads include lib lib64 parts .installed.cfg .mr.developer.cfg bootstrap.py parts/omelette local share
