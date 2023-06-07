@@ -8,6 +8,7 @@ from plone.app.testing import applyProfile
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.browserlayer.utils import registered_layers
+from Products.CMFPlone.utils import get_installer
 from zope.event import notify
 from zope.interface import alsoProvides
 from zope.traversing.interfaces import BeforeTraverseEvent
@@ -22,6 +23,7 @@ class TestInstall(unittest.TestCase):
         self.app = self.layer['app']
         self.portal = self.layer['portal']
         self.request = self.layer['request']
+        self.installer = get_installer(self.portal, self.layer["request"])
         notify(BeforeTraverseEvent(self.portal, self.request))
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.document = api.content.create(container=self.portal,
@@ -33,11 +35,7 @@ class TestInstall(unittest.TestCase):
         """ Validate that our products GS profile has been run and the product
             installed
         """
-        qi_tool = api.portal.get_tool('portal_quickinstaller')
-        pid = 'collective.preventactions'
-        installed = [p['id'] for p in qi_tool.listInstalledProducts()]
-        self.assertTrue(pid in installed,
-                        'package appears not to have been installed')
+        self.assertTrue(self.installer.is_product_installed("collective.preventactions"))
 
     def test_layer_installed(self):
         self.assertTrue(ICollectivePreventActionsLayer in registered_layers())
