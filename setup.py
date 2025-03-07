@@ -8,41 +8,42 @@ import os
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-long_description = \
-    read('README.rst') + \
-    read('CHANGES.rst')
+
+long_description = read("README.rst") + read("CHANGES.rst")
 
 setup(
-    name='collective.preventactions',
-    version='0.3.1.dev0',
-    description="This package allows administrateur to marker object which can't be deleted",
+    name="collective.preventactions",
+    version="0.4.0.dev0",
+    description="This package allows administrators to mark objects which can't be deleted",
     long_description=long_description,
     # Get more from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
         "Framework :: Plone",
+        "Framework :: Plone :: Addon",
+        "Framework :: Plone :: 6.0",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
     ],
-    keywords='Plone Python Zope',
-    author='Benoît Suttor',
-    author_email='benoit.suttor@imio.be',
-    url='http://pypi.python.org/pypi/collective.preventactions',
-    license='BSD',
-    packages=find_packages('src', exclude=['ez_setup']),
-    namespace_packages=['collective'],
-    package_dir={'': 'src'},
+    keywords="Plone Python Zope",
+    author="Benoît Suttor",
+    author_email="benoit.suttor@imio.be",
+    url="http://pypi.python.org/pypi/collective.preventactions",
+    license="BSD",
+    packages=find_packages("src", exclude=["ez_setup"]),
+    namespace_packages=["collective"],
+    package_dir={"": "src"},
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'Plone',
-        'Products.GenericSetup>=1.8.2',
-        'setuptools',
-        'plone.api',
+        "Plone",
+        "Products.GenericSetup>=1.8.2",
+        "setuptools",
+        "plone.api",
     ],
-    extras_require={
-        'test': [
-            'plone.app.robotframework',
-        ],
-    },
+    extras_require={},
     entry_points="""
     """,
 )
