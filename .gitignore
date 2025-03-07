@@ -14,6 +14,7 @@ include/
 lib/
 local/
 parts/
+pyvenv.cfg
 src/*
 test.plone_addon/
 var/
@@ -35,3 +36,4 @@ report.html
 !.travis.yml
 !src/collective
 .tags*
+.vscode
