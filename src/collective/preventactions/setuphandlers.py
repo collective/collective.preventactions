@@ -9,21 +9,20 @@ from zope.interface import noLongerProvides
 
 @implementer(INonInstallable)
 class HiddenProfiles(object):
-
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller"""
         return [
-            'collective.preventactions:uninstall',
+            "collective.preventactions:uninstall",
         ]
 
 
 def uninstall(context):
     # get all objects provided by IPreventDelete or IPreventMoveOrRename
     # for unprovided interfaces
-    catalog = api.portal.get_tool('portal_catalog')
+    catalog = api.portal.get_tool("portal_catalog")
     query = {}
     for iface in [IPreventDelete, IPreventMoveOrRename]:
-        query['object_provides'] = iface.__identifier__
+        query["object_provides"] = iface.__identifier__
         brains = catalog(query)
         for brain in brains:
             obj = brain.getObject()

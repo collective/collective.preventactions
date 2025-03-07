@@ -19,7 +19,6 @@ logger = logging.getLogger("collective.preventactions")
 
 
 class PreventBool(schema.Bool):
-
     _type = bool
 
     def __init__(self, title, description, default, iface=None):

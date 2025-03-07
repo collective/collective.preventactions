@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from collective.preventactions.behaviors.prevent_actions import IPreventActionsMarker
-from collective.preventactions.testing import COLLECTIVE_PREVENTACTIONS_FUNCTIONAL
 from collective.preventactions.testing import COLLECTIVE_PREVENTACTIONS_INTEGRATION
 from plone import api
 from plone.app.testing import setRoles
@@ -10,7 +9,6 @@ import unittest
 
 
 class PreventActionsIntegrationTest(unittest.TestCase):
-
     layer = COLLECTIVE_PREVENTACTIONS_INTEGRATION
 
     def setUp(self):
