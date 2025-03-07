@@ -3,7 +3,7 @@
 
 from zope.i18nmessageid import MessageFactory
 
-_ = MessageFactory('collective.preventdelete')
+_ = MessageFactory("collective.preventactions")
 
 
 def initialize(context):

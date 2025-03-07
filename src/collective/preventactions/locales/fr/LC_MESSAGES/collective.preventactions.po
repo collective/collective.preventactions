@@ -1,0 +1,88 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2025-03-06 23:11+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: fr\n"
+"Language-Name: Français\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.preventactions\n"
+
+#: collective/preventactions/browser/preventactions.py:86
+msgid "Changes saved"
+msgstr "Changements sauvegardés"
+
+#: collective/preventactions/configure.zcml:23
+msgid "Extension profile for collective.preventactions."
+msgstr "Profil d'extension pour collective.preventactions."
+
+#: collective/preventactions/browser/preventactions.py:37
+msgid "If checked, this object can not be deleted."
+msgstr "Si coché, cet objet ne peut pas être supprimé."
+
+#: collective/preventactions/browser/preventactions.py:44
+msgid "If checked, this object can not be moved or renamed (id)."
+msgstr "Si coché, cet objet ne peut pas être déplacé ou renommé (id)."
+
+#: collective/preventactions/browser/preventactions.py:52
+#: collective/preventactions/profiles/default/actions.xml
+msgid "Prevent actions"
+msgstr "Prevent actions"
+
+#: collective/preventactions/behaviors/configure.zcml:17
+msgid "PreventActions"
+msgstr "PreventActions"
+
+#: collective/preventactions/browser/preventactions.py:71
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: collective/preventactions/behaviors/configure.zcml:17
+msgid "This behaviors adds prevent actions on a content type"
+msgstr "Ce comportement permet d'empêcher des actions sur un type de contenu"
+
+#: collective/preventactions/browser/preventactions.py:36
+msgid "This object can not be deleted"
+msgstr "Cet objet ne peut pas être supprimé"
+
+#: collective/preventactions/browser/preventactions.py:43
+msgid "This object can not be moved or renamed"
+msgstr "Cet objet ne peut pas être déplacé ou renommé"
+
+#: collective/preventactions/configure.zcml:32
+msgid "Uninstalls collective.preventactions."
+msgstr "Désinstalle collective.preventactions."
+
+#: collective/preventactions/browser/preventactions.py:53
+msgid "What actions do you want to prevent ?"
+msgstr "Quelles actions voulez-vous empêcher ?"
+
+#: collective/preventactions/prevent.py:19
+msgid "You can not delete this object"
+msgstr "Vous ne pouvez pas supprimer cet objet"
+
+#: collective/preventactions/prevent.py:28
+msgid "You can not move or rename this object"
+msgstr "Vous ne pouvez pas déplacer ou renommer cet objet"
+
+#: collective/preventactions/configure.zcml:23
+msgid "collective.preventactions"
+msgstr "collective.preventactions"
+
+#: collective/preventactions/testing.zcml:15
+msgid "collective.preventactions desc"
+msgstr "collective.preventactions desc"
+
+#: collective/preventactions/testing.zcml:15
+msgid "collective.preventactions test"
+msgstr "collective.preventactions test"
+
+#: collective/preventactions/configure.zcml:32
+msgid "collective.preventactions: uninstall"
+msgstr "collective.preventactions: désinstaller"
