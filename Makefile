@@ -6,6 +6,7 @@ help:
 .PHONY: install  # Install project
 install: ./bin/pip
 	./bin/pip install -r https://dist.plone.org/release/6.1.0/requirements.txt
+	./bin/pip install ruff
 	./bin/buildout -c buildout.cfg
 
 .PHONY: test  # Test project
@@ -23,6 +24,16 @@ cleanall:
 .PHONY: update-locales  # Update locales
 update-locales:
 	./update-locales.sh
+
+.PHONY: ruff-check # Run ruff linter and formater check
+ruff-check:
+	./bin/ruff check src/*
+	./bin/ruff format --check src/*
+
+.PHONY: ruff-fix # Run ruff linter and formater check, and fix issues
+ruff-fix:
+	./bin/ruff check --fix src/*
+	./bin/ruff format src/*
 
 ./bin/pip:
 	python3.12 -m venv .
