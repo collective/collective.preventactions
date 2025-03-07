@@ -1,10 +1,3 @@
-.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
-   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
-   This text does not appear on pypi or github. It is a comment.
-
-.. image:: https://travis-ci.org/collective/collective.preventactions.svg?branch=master
-   :target: https://travis-ci.org/collective/collective.preventactions
-
 .. image:: https://coveralls.io/repos/collective/collective.preventactions/badge.svg?branch=master
    :target: https://coveralls.io/github/collective/collective.preventactions?branch=master
 
@@ -12,7 +5,7 @@
 collective.preventactions
 =========================
 
-This package allows administrateur to marker object which can't be deleted or renamed/moved.
+This package allows administrators to mark objects which can't be deleted or renamed/moved.
 
 .. image:: https://raw.githubusercontent.com/imio/collective.preventactions/master/docs/screenshot.png
     :alt: The map on a collection.
@@ -27,7 +20,8 @@ This package allows administrateur to marker object which can't be deleted or re
 Versions
 --------
 
-- Versions > 0.3 are for Plone 5.2 and Python 3
+- Version 0.4 is for Plone 6 and Python 3
+- Version 0.3 is for Plone 5.2 and Python 3
 - Versions < 0.3 are compatible with Archetypes (branch 0.2.x)
 
 

@@ -1,10 +1,20 @@
 Changelog
 =========
 
-0.3.1 (unreleased)
+0.4.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add Plone 6 compatibility.
+  [remdub]
+
+- Add french locales.
+  [remdub]
+
+- Remove robot tests.
+  [remdub]
+
+- Add behavior to choose which content types to prevent.
+  [remdub]
 
 
 0.3.0 (2019-11-26)

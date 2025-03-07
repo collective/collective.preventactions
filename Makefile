@@ -1,25 +1,28 @@
 #!/usr/bin/make
-.PHONY: buildout cleanall test instance
+.PHONY: help  # List phony targets
+help:
+	@cat "Makefile" | grep '^.PHONY:' | sed -e "s/^.PHONY:/- make/"
 
-bootstrap.py:
-	wget http://downloads.buildout.org/2/bootstrap.py
+.PHONY: install  # Install project
+install: ./bin/pip
+	./bin/pip install -r https://dist.plone.org/release/6.1.0/requirements.txt
+	./bin/buildout -c buildout.cfg
 
-bin/python:
-	virtualenv-2.7 .
-	touch $@
-
-bin/buildout: bootstrap.py buildout.cfg bin/python
-	./bin/python bootstrap.py
-	touch $@
-
-buildout: bin/buildout
-	./bin/buildout -t 7
-
-test: buildout
+.PHONY: test  # Test project
+test: install
 	./bin/test
 
-instance: buildout
+.PHONY: start  # Start project
+start: install
 	./bin/instance fg
 
+.PHONY: cleanall  # Clean environment
 cleanall:
 	rm -rf bin develop-eggs downloads include lib parts .installed.cfg .mr.developer.cfg bootstrap.py
+
+.PHONY: update-locales  # Update locales
+update-locales:
+	./update-locales.sh
+
+./bin/pip:
+	python3.12 -m venv .
