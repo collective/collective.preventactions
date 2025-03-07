@@ -15,7 +15,7 @@ from zope.interface import noLongerProvides
 import logging
 
 
-logger = logging.getLogger('collective.preventeactions')
+logger = logging.getLogger("collective.preventactions")
 
 
 class PreventBool(schema.Bool):
@@ -24,42 +24,38 @@ class PreventBool(schema.Bool):
 
     def __init__(self, title, description, default, iface=None):
         super(PreventBool, self).__init__(
-            title=title,
-            description=description,
-            required=False,
-            default=default
+            title=title, description=description, required=False, default=default
         )
         self.iface = iface
 
 
 class IPreventActions(Interface):
-    """ Define form fields """
+    """Define form fields"""
 
     delete = PreventBool(
-        title=_(u'This object can not be deleted'),
-        description=_(u'If check, this object can not be deleted.'),
+        title=_("This object can not be deleted"),
+        description=_("If checked, this object can not be deleted."),
         default=False,
-        iface=IPreventDelete
+        iface=IPreventDelete,
     )
 
     move_or_rename = PreventBool(
-        title=_(u'This object can not be moved or renamed'),
-        description=_(
-            u'If check, this object can not be moved or renamed (id).'),
+        title=_("This object can not be moved or renamed"),
+        description=_("If checked, this object can not be moved or renamed (id)."),
         default=False,
-        iface=IPreventMoveOrRename
+        iface=IPreventMoveOrRename,
     )
 
 
 class PreventActionsForm(form.Form):
     fields = field.Fields(IPreventActions)
-    label = _(u'Prevent actions')
-    description = _(u'What actions will you prevent ?')
-    fields['delete'].widgetFactory = SingleCheckBoxFieldWidget
-    fields['move_or_rename'].widgetFactory = SingleCheckBoxFieldWidget
+    label = _("Prevent actions")
+    description = _("What actions do you want to prevent ?")
+    fields["delete"].widgetFactory = SingleCheckBoxFieldWidget
+    fields["move_or_rename"].widgetFactory = SingleCheckBoxFieldWidget
 
     def updateWidgets(self):
-        """ Customize widget options before rendering the form. """
+        """Customize widget options before rendering the form."""
         super(PreventActionsForm, self).updateWidgets()
 
         # Dump out all widgets - note that each <fieldset> is a subform
@@ -68,11 +64,11 @@ class PreventActionsForm(form.Form):
             widget = self.widgets[widget_name]
             checked = widget.field.iface.providedBy(self.context)
             if checked:
-                widget.value = [u'selected']
+                widget.value = ["selected"]
             else:
                 widget.value = []
 
-    @button.buttonAndHandler(_(u'Save'))
+    @button.buttonAndHandler(_("Save"))
     def handleApply(self, action):
         data, errors = self.extractData()
         if errors:
@@ -82,17 +78,16 @@ class PreventActionsForm(form.Form):
         for name, value in data.items():
             if value:
                 alsoProvides(self.context, self.fields[name].field.iface)
-                self.widgets[name].value = [u'selected']
+                self.widgets[name].value = ["selected"]
             else:
                 noLongerProvides(self.context, self.fields[name].field.iface)
                 self.widgets[name].value = []
 
-        self.status = _(u'Changes saved')
+        self.status = _("Changes saved")
 
-    @button.buttonAndHandler(u'Cancel')
+    @button.buttonAndHandler("Cancel")
     def handleCancel(self, action):
-        """User cancelled. Redirect back to the front page.
-        """
+        """User cancelled. Redirect back to the front page."""
 
 
 PreventActionsView = wrap_form(PreventActionsForm)
