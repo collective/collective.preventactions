@@ -4,6 +4,9 @@ Changelog
 0.4.0 (unreleased)
 ------------------
 
+- Switch to PEP 420 native namespace package.
+  [remdub]
+
 - Add Plone 6 compatibility.
   [remdub]
 
