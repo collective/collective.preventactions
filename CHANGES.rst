@@ -1,10 +1,21 @@
 Changelog
 =========
 
-0.3.1 (unreleased)
+0.4.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix: the "Prevent actions" form now reindexes ``object_provides``, so the
+  uninstall profile also unmarks objects protected through the form.
+  [remdub]
+
+- Fix: the uninstall profile now removes the "Prevent actions" object action.
+  [remdub]
+
+- Modernize package (Plone 6.2.3, PEP420, plone.meta, tests, french locales)
+  [remdub]
+
+- Add behavior to choose which content types to prevent.
+  [remdub]
 
 
 0.3.0 (2019-11-26)

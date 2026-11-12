@@ -1,39 +1,49 @@
 <configure
-  xmlns="http://namespaces.zope.org/zope"
-  xmlns:browser="http://namespaces.zope.org/browser"
-  xmlns:plone="http://namespaces.plone.org/plone"
-  xmlns:zcml="http://namespaces.zope.org/zcml"
-  i18n_domain="collective.preventactions">
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="collective.preventactions"
+    >
 
   <!-- Publish static files -->
-  <browser:resourceDirectory name="collective.preventactions" directory="static"/>
+  <browser:resourceDirectory
+      name="collective.preventactions"
+      directory="static"
+      />
 
-  <include package="Products.CMFCore" file="permissions.zcml"/>
+  <include
+      package="Products.CMFCore"
+      file="permissions.zcml"
+      />
 
   <browser:page
-    name="prevent-actions"
-    for="OFS.interfaces.IItem"
-    class=".preventactions.PreventActionsView"
-    layer="..interfaces.ICollectivePreventActionsLayer"
-    permission="cmf.ManagePortal"/>
+      name="prevent-actions"
+      for="OFS.interfaces.IItem"
+      class=".preventactions.PreventActionsView"
+      permission="cmf.ManagePortal"
+      layer="..interfaces.ICollectivePreventActionsLayer"
+      />
 
 
   <class class="plone.dexterity.content.DexterityContent">
-    <implements interface=".preventactions.IPreventActions"/>
+    <implements interface=".preventactions.IPreventActions" />
   </class>
 
   <browser:page
-    for="OFS.interfaces.IItem"
-    name="is_deletable"
-    class=".views.IsDeletable"
-    layer="..interfaces.ICollectivePreventActionsLayer"
-    permission="zope2.Public"/>
+      name="is_deletable"
+      for="OFS.interfaces.IItem"
+      class=".views.IsDeletable"
+      permission="zope2.Public"
+      layer="..interfaces.ICollectivePreventActionsLayer"
+      />
 
   <browser:page
-    for="OFS.interfaces.IItem"
-    name="is_moveable"
-    class=".views.IsMoveable"
-    layer="..interfaces.ICollectivePreventActionsLayer"
-    permission="zope2.Public"/>
+      name="is_moveable"
+      for="OFS.interfaces.IItem"
+      class=".views.IsMoveable"
+      permission="zope2.Public"
+      layer="..interfaces.ICollectivePreventActionsLayer"
+      />
 
 </configure>
