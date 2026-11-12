@@ -79,6 +79,8 @@ class PreventActionsForm(form.Form):
             else:
                 noLongerProvides(self.context, self.fields[name].field.iface)
                 self.widgets[name].value = []
+        # The uninstall profile finds marked objects through the catalog.
+        self.context.reindexObject(idxs=["object_provides"])
 
         self.status = _("Changes saved")
 

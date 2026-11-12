@@ -29,4 +29,12 @@
     </object>
   </object>
 
+  <object meta_type="CMF Action Category"
+          name="object"
+  >
+    <object name="prevents"
+            remove="True"
+    />
+  </object>
+
 </object>
