@@ -9,8 +9,8 @@ This package allows administrators to mark objects which can't be deleted or ren
 
 .. image:: https://raw.githubusercontent.com/imio/collective.preventactions/master/docs/screenshot.png
     :alt: The map on a collection.
-    :width: 388
-    :height: 276
+    :width: 602
+    :height: 460
     :align: center
 
 * `Source code @ GitHub <https://github.com/collective/collective.preventactions>`_
