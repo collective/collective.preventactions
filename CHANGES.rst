@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.4.0 (unreleased)
+0.4.0 (2026-11-12)
 ------------------
 
 - Fix: the "Prevent actions" form now reindexes ``object_provides``, so the
