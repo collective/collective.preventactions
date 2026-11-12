@@ -27,7 +27,7 @@
     title="collective.preventactions: uninstall"
     directory="profiles/uninstall"
     description="Uninstalls collective.preventactions."
-    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    for="plone.base.interfaces.IPloneSiteRoot"
     provides="Products.GenericSetup.interfaces.EXTENSION"
     post_handler=".setuphandlers.uninstall"/>
 

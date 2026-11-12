@@ -1,39 +1,34 @@
 #!/usr/bin/make
-.PHONY: help  # List phony targets
-help:
-	@cat "Makefile" | grep '^.PHONY:' | sed -e "s/^.PHONY:/- make/"
+TOX=uvx --with tox-uv tox
 
-.PHONY: install  # Install project
-install: ./bin/pip
-	./bin/pip install -r https://dist.plone.org/release/6.1.0/requirements.txt
-	./bin/pip install ruff
-	./bin/buildout -c buildout.cfg
+ifeq (, $(shell which uv ))
+  $(error "[ERROR] The 'uv' command is missing from your PATH. Install it from: https://docs.astral.sh/uv/getting-started/installation/")
+endif
 
-.PHONY: test  # Test project
-test: install
-	./bin/test
+.PHONY: help
+help: ## Display this help message
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-.PHONY: start  # Start project
-start: install
-	./bin/instance fg
+.PHONY: test
+test: ## Run tests on Python 3.12 with Plone 6.2.3
+	$(TOX) -e py312-plone62
 
-.PHONY: cleanall  # Clean environment
-cleanall:
-	rm -rf bin develop-eggs downloads include lib parts .installed.cfg .mr.developer.cfg bootstrap.py
+.PHONY: test-all
+test-all: ## Run lint, all supported Python / Plone versions and dependency checks
+	$(TOX)
 
-.PHONY: update-locales  # Update locales
-update-locales:
+.PHONY: lint
+lint: ## Run pre-commit hooks
+	$(TOX) -e lint
+
+.PHONY: format
+format: ## Reformat code (pyupgrade, isort, black, zpretty)
+	$(TOX) -e format
+
+.PHONY: update-locales
+update-locales: ## Update locales
 	./update-locales.sh
 
-.PHONY: ruff-check # Run ruff linter and formater check
-ruff-check:
-	./bin/ruff check src/*
-	./bin/ruff format --check src/*
-
-.PHONY: ruff-fix # Run ruff linter and formater check, and fix issues
-ruff-fix:
-	./bin/ruff check --fix src/*
-	./bin/ruff format src/*
-
-./bin/pip:
-	python3.12 -m venv .
+.PHONY: clean
+clean: ## Remove tox environments and build artifacts
+	rm -rf .tox .venv build dist htmlcov .coverage coverage.xml src/*.egg-info

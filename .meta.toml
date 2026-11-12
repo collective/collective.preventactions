@@ -12,6 +12,8 @@ htmlcov/
 """
 
 [pyproject]
+# Used through <class class="plone.dexterity.content.DexterityContent"> in browser/configure.zcml
+dependencies_ignores = "['plone.dexterity']"
 check_manifest_ignores = """
     "Makefile",
     "update-locales.sh",

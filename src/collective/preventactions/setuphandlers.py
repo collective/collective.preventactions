@@ -2,7 +2,7 @@
 from collective.preventactions.interfaces import IPreventDelete
 from collective.preventactions.interfaces import IPreventMoveOrRename
 from plone import api
-from Products.CMFPlone.interfaces import INonInstallable
+from plone.base.interfaces import INonInstallable
 from zope.interface import implementer
 from zope.interface import noLongerProvides
 

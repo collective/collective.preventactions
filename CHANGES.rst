@@ -4,6 +4,15 @@ Changelog
 0.4.0 (unreleased)
 ------------------
 
+- Configure the package with ``plone.meta``: move package metadata to
+  ``pyproject.toml``, replace buildout and ruff with tox and pre-commit
+  (tested on Plone 6.2.3 and 6.1), add GitHub Actions workflows.
+  [remdub]
+
+- Import ``INonInstallable``, ``IPloneSiteRoot`` and ``get_installer`` from
+  ``plone.base`` instead of the deprecated ``Products.CMFPlone`` locations.
+  [remdub]
+
 - Switch to PEP 420 native namespace package.
   [remdub]
 
