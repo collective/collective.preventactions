@@ -11,29 +11,7 @@ Changelog
 - Fix: the uninstall profile now removes the "Prevent actions" object action.
   [remdub]
 
-- Configure the package with ``plone.meta``: move package metadata to
-  ``pyproject.toml``, replace buildout and ruff with tox and pre-commit
-  (tested on Plone 6.2.3 and 6.1), add GitHub Actions workflows.
-  [remdub]
-
-- Import ``INonInstallable``, ``IPloneSiteRoot`` and ``get_installer`` from
-  ``plone.base`` instead of the deprecated ``Products.CMFPlone`` locations.
-  [remdub]
-
-- Add tests for the event subscribers, the form, the portal actions and the
-  uninstall profile.
-  [remdub]
-
-- Switch to PEP 420 native namespace package.
-  [remdub]
-
-- Add Plone 6 compatibility.
-  [remdub]
-
-- Add french locales.
-  [remdub]
-
-- Remove robot tests.
+- Modernize package (Plone 6.2.3, PEP420, plone.meta, tests, french locales)
   [remdub]
 
 - Add behavior to choose which content types to prevent.
