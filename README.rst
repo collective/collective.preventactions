@@ -20,7 +20,7 @@ This package allows administrators to mark objects which can't be deleted or ren
 Versions
 --------
 
-- Version 0.4 is for Plone 6.1 / 6.2 and Python 3.12+
+- Version 0.4 is for Plone 6.1 / 6.2 and Python 3.10+
 - Version 0.3 is for Plone 5.2 and Python 3
 - Versions < 0.3 are compatible with Archetypes (branch 0.2.x)
 
