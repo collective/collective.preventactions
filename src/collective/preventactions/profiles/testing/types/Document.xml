@@ -6,7 +6,9 @@
 >
 
   <!-- Enabled behaviors -->
-  <property name="behaviors" purge="true">
+  <property name="behaviors"
+            purge="true"
+  >
     <element value="collective.preventactions.prevent_actions" />
     <element value="plone.namefromtitle" />
     <element value="plone.allowdiscussion" />

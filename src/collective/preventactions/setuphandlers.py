@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.preventactions.interfaces import IPreventDelete
 from collective.preventactions.interfaces import IPreventMoveOrRename
 from plone import api
@@ -8,7 +7,7 @@ from zope.interface import noLongerProvides
 
 
 @implementer(INonInstallable)
-class HiddenProfiles(object):
+class HiddenProfiles:
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller"""
         return [

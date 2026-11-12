@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.preventactions.behaviors.prevent_actions import IPreventActionsMarker
 from collective.preventactions.testing import COLLECTIVE_PREVENTACTIONS_INTEGRATION
 from plone import api

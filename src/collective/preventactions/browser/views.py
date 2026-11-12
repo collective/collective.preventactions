@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.preventactions.interfaces import IPreventDelete
 from collective.preventactions.interfaces import IPreventMoveOrRename
 from Products.Five.browser import BrowserView

@@ -31,7 +31,7 @@ How it works
 This package use marker interfaces and subscribe to `IObjectWillBeRemovedEvent` and `IObjectWillBeMovedEvent` events.
 If a marker interface is find on modified object, a exception will be raised.
 
-You can also set some contents not deleteable (for example) like this in your setuphandler : ::
+You can also set some contents not deletable (for example) like this in your setuphandler : ::
 
    from collective.preventactions.interfaces import IPreventDelete
    from plone import api

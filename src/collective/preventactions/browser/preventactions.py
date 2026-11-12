@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.preventactions import _
 from collective.preventactions.interfaces import IPreventDelete
 from collective.preventactions.interfaces import IPreventMoveOrRename
@@ -14,7 +13,6 @@ from zope.interface import noLongerProvides
 
 import logging
 
-
 logger = logging.getLogger("collective.preventactions")
 
 
@@ -22,7 +20,7 @@ class PreventBool(schema.Bool):
     _type = bool
 
     def __init__(self, title, description, default, iface=None):
-        super(PreventBool, self).__init__(
+        super().__init__(
             title=title, description=description, required=False, default=default
         )
         self.iface = iface
@@ -55,7 +53,7 @@ class PreventActionsForm(form.Form):
 
     def updateWidgets(self):
         """Customize widget options before rendering the form."""
-        super(PreventActionsForm, self).updateWidgets()
+        super().updateWidgets()
 
         # Dump out all widgets - note that each <fieldset> is a subform
         # and this function only concerns the current fieldset

@@ -1,14 +1,14 @@
-# -*- coding: utf-8 -*-
 from collective.preventactions.interfaces import IPreventDelete
 from collective.preventactions.interfaces import IPreventMoveOrRename
-from collective.preventactions.testing import COLLECTIVE_PREVENTACTIONS_INTEGRATION  # noqa
+from collective.preventactions.testing import (  # noqa
+    COLLECTIVE_PREVENTACTIONS_INTEGRATION,
+)
 from OFS.ObjectManager import BeforeDeleteException
 from plone import api
 from plone.app.testing import login
 from plone.app.testing import setRoles
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
-
 from zope.interface import alsoProvides
 from zope.interface import noLongerProvides
 

@@ -1,10 +1,8 @@
-# -*- coding: utf-8 -*-
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneWithPackageLayer
 
 import collective.preventactions
-
 
 COLLECTIVE_PREVENTACTIONS = PloneWithPackageLayer(
     zcml_package=collective.preventactions,

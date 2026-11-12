@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from collective.preventactions import _
 from collective.preventactions.interfaces import IPreventDelete
 from collective.preventactions.interfaces import IPreventMoveOrRename

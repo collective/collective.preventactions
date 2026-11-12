@@ -1,6 +1,7 @@
-# -*- coding: utf-8 -*-
 from collective.preventactions.interfaces import IPreventDelete
-from collective.preventactions.testing import COLLECTIVE_PREVENTACTIONS_INTEGRATION  # noqa
+from collective.preventactions.testing import (  # noqa
+    COLLECTIVE_PREVENTACTIONS_INTEGRATION,
+)
 from plone import api
 from plone.app.testing import login
 from plone.app.testing import setRoles

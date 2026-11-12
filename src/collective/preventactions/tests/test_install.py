@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
 from collective.preventactions.interfaces import ICollectivePreventActionsLayer
 from collective.preventactions.interfaces import IPreventDelete
 from collective.preventactions.interfaces import IPreventMoveOrRename
-from collective.preventactions.testing import (
+from collective.preventactions.testing import (  # noqa
     COLLECTIVE_PREVENTACTIONS_INTEGRATION,
-)  # noqa
+)
 from plone import api
 from plone.app.testing import applyProfile
 from plone.app.testing import setRoles
