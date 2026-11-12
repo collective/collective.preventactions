@@ -50,6 +50,8 @@ local.cfg
 
 .venv
 htmlcov/
+.mxdev_cache/
+requirements.txt
 
 ##
 # Add extra configuration options in .meta.toml:

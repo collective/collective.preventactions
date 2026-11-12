@@ -52,6 +52,7 @@ dependencies = [
 test = [
     "plone.app.testing",
     "plone.browserlayer",
+    "plone.classicui",
 ]
 
 [project.urls]
@@ -143,7 +144,7 @@ Zope = [
 ]
 python-dateutil = ['dateutil']
 pytest-plone = ['pytest', 'zope.pytestlayer', 'plone.testing', 'plone.app.testing']
-ignore-packages = ['plone.dexterity']
+ignore-packages = ['plone.dexterity', 'plone.classicui']
 
 ##
 # Add extra configuration options in .meta.toml:
@@ -171,6 +172,8 @@ ignore = [
     "tox.ini",
     "Makefile",
     "update-locales.sh",
+    "instance.yaml",
+    "scripts/*",
 
 ]
 

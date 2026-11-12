@@ -9,14 +9,19 @@ commit-id = "2.12.0"
 extra_lines = """
 .venv
 htmlcov/
+.mxdev_cache/
+requirements.txt
 """
 
 [pyproject]
-# Used through <class class="plone.dexterity.content.DexterityContent"> in browser/configure.zcml
-dependencies_ignores = "['plone.dexterity']"
+# plone.dexterity: used through <class class="plone.dexterity.content.DexterityContent"> in browser/configure.zcml
+# plone.classicui: classic distribution for the dev instance (scripts/create_site.py)
+dependencies_ignores = "['plone.dexterity', 'plone.classicui']"
 check_manifest_ignores = """
     "Makefile",
     "update-locales.sh",
+    "instance.yaml",
+    "scripts/*",
 """
 
 [tox]
